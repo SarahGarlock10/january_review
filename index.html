@@ -1,81 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monthly Progress Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { width: 80%; margin: auto; }
-        canvas { max-width: 600px; margin: 20px auto; }
-        .tab { cursor: pointer; padding: 10px; display: inline-block; margin: 5px; border: 1px solid #ddd; }
-        .tab:hover { background-color: #f0f0f0; }
-        .section { display: none; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Progress Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Monthly Progress Report</h1>
-    <div>
-        <span class="tab" onclick="showSection('wins')">🏆 Wins</span>
-        <span class="tab" onclick="showSection('challenges')">⚠️ Challenges</span>
-        <span class="tab" onclick="showSection('metrics')">📊 Metrics</span>
-        <span class="tab" onclick="showSection('plan')">📝 Plan Ahead</span>
+  <h1>Monthly Report for Sarah Garlock</h1>
+  <h2>Here is my Monthly Report for January 2025</h2>
+  <p>Below are buttons and dropdowns, feel free to click around!</p>
+  <div>
+    <span class="tab" onclick="showSection('wins')">🏆 Wins</span>
+    <span class="tab" onclick="showSection('challenges')">⚠️ Challenges</span>
+    <span class="tab" onclick="showSection('plan')">📝 Plan Ahead</span>
+  </div>
+
+  <div id="wins" class="section">
+    <h2>🏆 Wins</h2>
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown(event)">DDR Reporting ▼</button>
+      <div class="dropdown-content">
+        <div><strong>Revamped <a href="https://docs.google.com/spreadsheets/d/19JFW2ih_VApm7CmbvTf7VNgTDie8z84dH-hJ--c0_z8/edit?pli=1&gid=2064103271#gid=2064103271" target="_blank">DDR Reporting</a></strong></div>
+        <div>- Added automated logic for daily Profit/Revenue numbers</div>
+        <div>- Week after week comparison</div>
+        <div>- Visuals and Graphs</div>
+        <div>- Weekday vs Weekend totals</div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown(event)">O&O ▼</button>
+      <div class="dropdown-content">
+        <div><strong>DNS</strong></div>
+        <div>- Learned DNS setup for <a href="https://homeimprovementradar.com/" target="_blank">HomeImprovementRadar.com</a></div>
+        <div>- Contributed to <a href="https://www.notion.so/Code-Base-Hub-a47c0c93b9204d88a1ae7c43191c44f6" target="_blank">AWS documentation</a></div>
+        <hr>
+        <div><strong>Listicle</strong></div>
+        <div>- Revamped Spreadsheets for <a href="https://docs.google.com/spreadsheets/d/16CMDHgUmvcCZupyBvYj77I-agmFUOlos8YA7WKYvx0c/edit?gid=1446555650#gid=1446555650" target="_blank">Listicles</a></div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown(event)">Documentation ▼</button>
+      <div class="dropdown-content">
+        <div><strong>Reporting</strong></div>
+        <div>- Made it easier for CRMs to locate <a href="https://www.notion.so/Dashboard-def669814c764e87af33a2cdefa00f95" target="_blank">reporting sheets</a> in Notion Dashboard</div>
+        <hr>
+        <div>- Updated <a href="https://www.notion.so/Ringba-Tasks-28635176ed0f421e9c9e7d6205285780" target="_blank">Ringba Tasks documentation</a></div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown(event)">Measurables ▼</button>
+      <div class="dropdown-content">
+        <div>Ringba Builds in Notion for January: 36</div>
+        <hr>
+        <div>Two Listicles built and maintained: <br><a href="https://pathtoslim.com/" target="_blank">PathToSlim</a> and <a href="https://homeimprovementradar.com/" target="_blank">HomeImprovementRadar</a></div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="challenges" class="section">
+    <h2>⚠️ Challenges</h2>
+    <div class="dropdown">
+      <button class="dropdown-btn">Challenges ▼</button>
+      <div class="dropdown-content">
+        <div><strong>Ad Copies</strong></div>
+        <div>Receiving Ad Copies - I have started to locate Ad Copies on my own to create Listicle sites</div>
+        <hr>
+        <div><strong>Reporting</strong></div>
+        <div>Data - I'm not sure if my data information is up to date to collect</div>
+        <div>Month over Month - Plenty of bugs to adjust for new month of reporting</div>
+      </div>
+    </div>
+  </div>
+  <div id="plan" class="section">
+    <h2>📝 Plan Ahead</h2>
+    <div class="dropdown">
+      <button class="dropdown-btn">Reporting ▼</button>
+      <div class="dropdown-content">
+        <div>- Build Quartely and Month over Month Reporting</div>
+        <div>- Build out reporting for O&O</div>
+        <div>- Keep improving on RTB Reports</div>
+        <div>- Learn more about DNS</div>
+        <div>- Continue to provide support and communication to team</div>
+      </div>
     </div>
 
-    <div id="wins" class="section">
-        <h2>🏆 Wins</h2>
-        <ul>
-            <li>Successfully integrated API for Ringba call logs</li>
-            <li>Automated Google Sheets data pulls</li>
-            <li>Reduced manual workload by 40%</li>
-        </ul>
-    </div>
+  </div>
+  
 
-    <div id="challenges" class="section">
-        <h2>⚠️ Challenges</h2>
-        <ul>
-            <li>Encountered rate limits with API requests</li>
-            <li>Issues with sorting data in Google Sheets</li>
-        </ul>
-    </div>
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(sectionId).style.display = 'block';
+    }
 
-    <div id="metrics" class="section">
-        <h2>📊 Metrics</h2>
-        <canvas id="metricsChart"></canvas>
-    </div>
+    showSection('wins');
 
-    <div id="plan" class="section">
-        <h2>📝 Plan Ahead</h2>
-        <ul>
-            <li>Optimize API requests to reduce rate limits</li>
-            <li>Improve data visualization in reports</li>
-            <li>Enhance automation for better efficiency</li>
-        </ul>
-    </div>
+    const ctx = document.getElementById('metricsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['API Calls', 'Google Sheets Updates', 'Reports Generated'],
+        datasets: [{
+          label: 'Monthly Stats',
+          data: [120, 45, 30],
+          backgroundColor: ['#4CAF50', '#FF9800', '#2196F3']
+        }]
+      }
+    });
+  </script>
 
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
-            document.getElementById(sectionId).style.display = 'block';
-        }
-
-        // Display first section by default
-        showSection('wins');
-
-        // Chart.js for Metrics
-        const ctx = document.getElementById('metricsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['API Calls', 'Google Sheets Updates', 'Reports Generated'],
-                datasets: [{
-                    label: 'Monthly Stats',
-                    data: [120, 45, 30],
-                    backgroundColor: ['#4CAF50', '#FF9800', '#2196F3']
-                }]
-            }
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
+
 </html>
