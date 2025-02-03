@@ -1,43 +1,58 @@
-/* Remove styles specific to list items */
 .section ul {
-  list-style-type: none; /* No bullets needed anymore */
+  list-style-type: none;
   padding-left: 0;
 }
 
-body { 
-  font-family: Arial, sans-serif; 
-  text-align: center; 
-  background-color: rgb(183, 207, 255);
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #94b7fd, #b6ffb2);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
-.container { 
-  width: 80%; 
-  margin: auto; 
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-canvas { 
-  max-width: 600px; 
-  margin: 20px auto; 
+canvas {
+  max-width: 600px;
+  margin: 20px auto;
 }
 
-.tab { 
-  cursor: pointer; 
-  padding: 10px; 
-  display: inline-block; 
-  margin: 5px; 
-  border: 1px solid #ddd; 
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid #ddd;
   background-color: #ddd;
+  transition: background 0.3s ease;
 }
 
-.tab:hover { 
-  background-color: #f0f0f0; 
+.tab:hover {
+  background-color: #f0f0f0;
 }
 
-.section { 
-  display: none; 
+.section {
+  display: none;
 }
 
-/* Dropdown container (div replacing li) */
+.section hr {
+  width: 75%;
+  color: #0069da;
+}
+
 .dropdown {
   margin-bottom: 10px;
 }
@@ -48,44 +63,76 @@ canvas {
   border: none;
   padding: 10px;
   width: 50%;
-  text-align: center;
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
   transition: background 0.3s ease;
-  text-align: center;
 }
 
 .dropdown-btn:hover {
   background-color: #02720a;
 }
 
-/* Dropdown content (now div instead of ul) */
 .dropdown-content {
   display: none;
   padding: 20px;
-  margin: 5px;
+  margin: 5px auto;
   width: 45%;
-  margin-left: auto;
-  margin-right: auto; /* Center the dropdown content */
-  text-align: left; /* Align content to the left */
+  text-align: left;
   background-color: #02720a3c;
   border-radius: 10px;
   border-color: #0069da;
 }
 
-/* Styling for dropdown items (div instead of li) */
 .dropdown-content div {
   padding: 5px 0;
 }
 
-/* Show dropdown content when active */
 .dropdown.active .dropdown-content {
   display: block;
 }
 
-.section hr {
-  width: 75%;
-  color:#0069da;
+.dropdown-image {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
+.dropdown-image img {
+  height: 300px;
+  max-width: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-image img:hover {
+  opacity: 1;
+}
+
+.report-header {
+  text-align: center;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.report-header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.report-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.report-header p {
+  font-size: 18px;
+  opacity: 0.8;
 }
